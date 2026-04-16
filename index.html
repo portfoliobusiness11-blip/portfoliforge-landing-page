@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Portfolio Review | Get Your Preview</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --white: #fafafa; --black: #1a1a1a; --gray: #6b6b6b; --accent: #2563eb; --light: #f3f4f6; }
+    html { scroll-behavior: smooth; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--white); color: var(--black); line-height: 1.6; font-size: 17px; }
+    .app { max-width: 800px; margin: 0 auto; }
+    .nav { position: fixed; top: 0; left: 0; right: 0; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(250,250,250,0.95); backdrop-filter: blur(10px); z-index: 1000; }
+    .nav-logo { font-weight: 600; font-size: 1.1rem; }
+    .nav-cta { background: var(--black); color: var(--white); padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .hero { padding: 8rem 2rem 6rem; text-align: center; }
+    .hero h1 { font-size: 2.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 1.5rem; }
+    .hero-sub { font-size: 1.35rem; color: var(--gray); margin-bottom: 1rem; }
+    .hero-support { font-size: 1.1rem; color: var(--gray); max-width: 520px; margin: 0 auto 2rem; }
+    .btn-primary { display: inline-block; background: var(--black); color: var(--white); padding: 1rem 2rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+    .btn-primary:hover { background: var(--accent); }
+    .hero-note { margin-top: 1rem; font-size: 0.85rem; color: var(--gray); }
+    section { padding: 4rem 2rem; }
+    section h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1.25rem; text-align: center; }
+    .problem, .insight, .what-you-get { background: var(--light); border-radius: 12px; padding: 3rem 2rem; margin: 0 2rem; }
+    .problem p, .insight p, .what-you-get p { margin-bottom: 1rem; color: #333; }
+    .benefits-list { list-style: none; margin: 2rem 0; }
+    .benefits-list li { margin-bottom: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; }
+    .what-note { font-size: 0.95rem; color: var(--gray); font-style: italic; }
+    .testimonials { padding: 4rem 2rem; }
+    .test-grid { display: grid; gap: 1.5rem; margin-top: 2rem; }
+    .test-card { padding: 1.5rem; background: var(--light); border-radius: 8px; }
+    .test-card p { font-size: 1rem; margin-bottom: 0.75rem; }
+    .test-card cite { font-size: 0.9rem; color: var(--gray); font-style: normal; }
+    .process { background: var(--black); color: var(--white); border-radius: 12px; padding: 3rem 2rem; margin: 0 2rem; }
+    .process h2 { color: var(--white); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+    .step { text-align: center; }
+    .step-num { width: 40px; height: 40px; background: var(--accent); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; }
+    .step h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem; }
+    .step p { color: #999; font-size: 0.95rem; }
+    .cta { padding: 5rem 2rem; text-align: center; }
+    .cta h2 { font-size: 2.25rem; }
+    .cta p { font-size: 1.1rem; color: var(--gray); max-width: 500px; margin: 0 auto 1rem; }
+    .form-section { background: var(--light); border-radius: 12px; padding: 3rem 2rem; margin: 0 2rem 4rem; }
+    .form-content { max-width: 600px; margin: 0 auto; }
+    .form-content h2 { font-size: 1.5rem; }
+    .form-content p { text-align: center; color: var(--gray); margin-bottom: 1.5rem; }
+    .form-embed { background: var(--white); border-radius: 8px; overflow: hidden; }
+    .footer { padding: 2rem; text-align: center; border-top: 1px solid #e5e7eb; }
+    .footer p { font-size: 0.85rem; color: var(--gray); }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.75rem; }
+      .hero-sub { font-size: 1.15rem; }
+      .steps { grid-template-columns: 1fr; }
+      .problem, .insight, .what-you-get, .process, .form-section { margin: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <nav class="nav">
+      <div class="nav-logo">Portfolio Review</div>
+      <a href="#form" class="nav-cta">Get Free Review</a>
+    </nav>
+
+    <section class="hero">
+      <h1>Not getting clients from your portfolio?</h1>
+      <p class="hero-sub">Here's the truth: it's probably not your skills. It's how you're presenting them.</p>
+      <p class="hero-support">Most freelancers have the skills. They just suck at showing it in a way that makes clients trust them enough to hire.</p>
+      <a href="#form" class="btn-primary">Get your free portfolio preview</a>
+      <p class="hero-note">Takes 2 minutes. No catch.</p>
+    </section>
+
+    <section class="problem">
+      <h2>The real problem</h2>
+      <p>Clients skim. They have 50 other freelancers to compare you with. In 8 seconds, they decide whether you're worth their time.</p>
+      <p>If your portfolio doesn't immediately build trust and show results, you're losing clients to people who are just okay at design but present themselves way better.</p>
+    </section>
+
+    <section class="insight">
+      <h2>It's a perception game</h2>
+      <p>The good news: small presentation changes = huge perception shifts.</p>
+      <p>You don't need to be the best designer. You need to be the one that looks the most hireable.</p>
+      <p>I've reviewed 80+ portfolios. The patterns are always the same. And they're usually an easy fix.</p>
+    </section>
+
+    <section class="what-you-get">
+      <h2>What you get</h2>
+      <ul class="benefits-list">
+        <li>✓ A personalized portfolio review (not a generic template)</li>
+        <li>✓ Honest feedback on what's hurting your conversions</li>
+        <li>✓ A preview showing how it could be improved</li>
+      </ul>
+      <p class="what-note">You see real value before paying anything. That's the point.</p>
+    </section>
+
+    <section class="testimonials">
+      <h2>What freelancers say</h2>
+      <div class="test-grid">
+        <div class="test-card">
+          <p>"I had good work but my portfolio looked like every other designer. The review showed me exactly what to fix. Within 2 weeks I landed a $3k project."</p>
+          <cite>— Designer from Dribbble</cite>
+        </div>
+        <div class="test-card">
+          <p>"Didn't think my portfolio was the issue until I saw the preview. Changed 3 things, got my first inquiry the next day. Coincidence? Probably not."</p>
+          <cite>— Developer from Upwork</cite>
+        </div>
+        <div class="test-card">
+          <p>"Straight to the point. No fluff. Got exactly what I needed to hear, not what I wanted to hear. That's why it worked."</p>
+          <cite>— Freelancer from Twitter</cite>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h3>Fill out a quick form</h3>
+          <p>2 minutes. Link to your portfolio. That's it.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h3>I review your portfolio</h3>
+          <p>I'll look at everything with fresh eyes and note what's working vs what's not.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h3>You get a custom preview</h3>
+          <p>See exactly how it could look with improvements. Then decide if you want the full version.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Curious?</h2>
+      <p>Fill out the form. You'll get immediate value, even if you don't buy anything.</p>
+      <p>The worst case: you learn something useful for free.</p>
+      <a href="#form" class="btn-primary">Get your free portfolio preview</a>
+    </section>
+
+    <section id="form" class="form-section">
+      <div class="form-content">
+        <h2>Get your free portfolio preview</h2>
+        <p>Fill out this form and I'll review your portfolio.</p>
+        <div class="form-embed">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe5lVyt-BOKvtZp3coWqWUSfCk7jKO2Y7vUa6jReN47UjHggw/viewform?usp=publish-editor" width="100%" height="600" frameborder="0">Loading…</iframe>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 Portfolio Review. One freelancer helping others.</p>
+    </footer>
+  </div>
+</body>
+</html>
