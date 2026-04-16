@@ -42,6 +42,33 @@
     .cta { padding: 5rem 2rem; text-align: center; }
     .cta h2 { font-size: 2.25rem; }
     .cta p { font-size: 1.1rem; color: var(--gray); max-width: 500px; margin: 0 auto 1rem; }
+    /* Gallery Section */
+    .gallery { background: var(--light); border-radius: 12px; padding: 3rem 2rem; margin: 0 2rem 4rem; }
+    .gallery h2 { text-align: center; }
+    .gallery-intro { text-align: center; color: var(--gray); margin-bottom: 2rem; }
+    .gallery-scroll { display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem; }
+    .gallery-item { 
+      flex: 0 0 250px; 
+      height: 200px; 
+      border-radius: 8px; 
+      overflow: hidden; 
+      cursor: pointer; 
+      transition: transform 0.2s ease; 
+    }
+    .gallery-item:hover { transform: scale(1.03); }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    /* Lightbox with carousel */
+    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 10000; align-items: center; justify-content: center; }
+    .lightbox.active { display: flex; }
+    .lightbox-container { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+    .lightbox-img { max-width: 80%; max-height: 80%; border-radius: 8px; object-fit: contain; }
+    .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 2rem; cursor: pointer; z-index: 10001; }
+    .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: none; color: white; font-size: 2rem; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; transition: background 0.2s; }
+    .lightbox-nav:hover { background: rgba(255,255,255,0.2); }
+    .lightbox-prev { left: 20px; }
+    .lightbox-next { right: 20px; }
+    .lightbox-counter { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+    /* Form */
     .form-section { background: var(--light); border-radius: 12px; padding: 3rem 2rem; margin: 0 2rem 4rem; }
     .form-content { max-width: 600px; margin: 0 auto; }
     .form-content h2 { font-size: 1.5rem; }
@@ -53,7 +80,8 @@
       .hero h1 { font-size: 1.75rem; }
       .hero-sub { font-size: 1.15rem; }
       .steps { grid-template-columns: 1fr; }
-      .problem, .insight, .what-you-get, .process, .form-section { margin: 0 1rem; }
+      .problem, .insight, .what-you-get, .process, .form-section, .gallery { margin: 0 1rem; }
+      .gallery-item { flex: 0 0 200px; height: 160px; }
     }
   </style>
 </head>
@@ -66,27 +94,27 @@
 
     <section class="hero">
       <h1>Not getting clients from your portfolio?</h1>
-      <p class="hero-sub">Here's the truth: it's probably not your skills. It's how you're presenting them.</p>
+      <p class="hero-sub">Here's the truth: Gut reactions matter the most. People decide in 8 seconds if you're worth their time</p>
       <p class="hero-support">Most freelancers have the skills. They just suck at showing it in a way that makes clients trust them enough to hire.</p>
       <a href="#form" class="btn-primary">Get your free portfolio preview</a>
       <p class="hero-note">Takes 2 minutes. No catch.</p>
     </section>
 
     <section class="problem">
-      <h2>The real problem</h2>
-      <p>Clients skim. They have 50 other freelancers to compare you with. In 8 seconds, they decide whether you're worth their time.</p>
+      <h2>Why you're not getting clients.</h2>
+      <p>Clients skim. They have 50 other freelancers to compare you with. That's why you need results fast.</p>
       <p>If your portfolio doesn't immediately build trust and show results, you're losing clients to people who are just okay at design but present themselves way better.</p>
     </section>
 
     <section class="insight">
-      <h2>It's a perception game</h2>
+      <h2>This isn't about skill</h2>
       <p>The good news: small presentation changes = huge perception shifts.</p>
-      <p>You don't need to be the best designer. You need to be the one that looks the most hireable.</p>
+      <p>You don't need to be the best designer. You need to look like you're the safest choice out there.</p>
       <p>I've reviewed 80+ portfolios. The patterns are always the same. And they're usually an easy fix.</p>
     </section>
 
     <section class="what-you-get">
-      <h2>What you get</h2>
+      <h2>What you'll get</h2>
       <ul class="benefits-list">
         <li>✓ A personalized portfolio review (not a generic template)</li>
         <li>✓ Honest feedback on what's hurting your conversions</li>
@@ -134,6 +162,28 @@
       </div>
     </section>
 
+    <section class="gallery">
+      <h2>Sample Reviews</h2>
+      <p class="gallery-intro">Click any image to view • Use arrows or arrow keys to navigate</p>
+      <div class="gallery-scroll">
+        <div class="gallery-item" onclick="openLightbox(0)">
+          <img src="https://agent-cdn.minimax.io/mcp/cdn_upload/499959933730684929/387064998285583/1776310797_03a88c31.png" alt="Portfolio Review 1">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(1)">
+          <img src="https://agent-cdn.minimax.io/mcp/cdn_upload/499959933730684929/387064998285583/1776310800_acbcf10d.png" alt="Portfolio Review 2">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(2)">
+          <img src="https://agent-cdn.minimax.io/mcp/cdn_upload/499959933730684929/387064998285583/1776310802_9bd788c9.png" alt="Portfolio Review 3">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(3)">
+          <img src="https://agent-cdn.minimax.io/mcp/cdn_upload/499959933730684929/387064998285583/1776310807_1c85503a.png" alt="Portfolio Review 4">
+        </div>
+        <div class="gallery-item" onclick="openLightbox(4)">
+          <img src="https://agent-cdn.minimax.io/mcp/cdn_upload/499959933730684929/387064998285583/1776310811_0b65ba23.png" alt="Portfolio Review 5">
+        </div>
+      </div>
+    </section>
+
     <section class="cta">
       <h2>Curious?</h2>
       <p>Fill out the form. You'll get immediate value, even if you don't buy anything.</p>
@@ -155,5 +205,63 @@
       <p>© 2026 Portfolio Review. One freelancer helping others.</p>
     </footer>
   </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <button class="lightbox-nav lightbox-prev" onclick="prevImage(event)">&#8249;</button>
+    <div class="lightbox-container" onclick="event.stopPropagation()">
+      <img class="lightbox-img" id="lightbox-img" src="" alt="Enlarged">
+    </div>
+    <button class="lightbox-nav lightbox-next" onclick="nextImage(event)">&#8250;</button>
+    <div class="lightbox-counter" id="lightbox-counter">1 / 5</div>
+  </div>
+
+  <script>
+    const images = [
+      'https://agent-cdn.minimax.io/mcp/cdn_upload/499959933730684929/387064998285583/1776310797_03a88c31.png',
+      'https://agent-cdn.minimax.io/mcp/cdn_upload/499959933730684929/387064998285583/1776310800_acbcf10d.png',
+      'https://agent-cdn.minimax.io/mcp/cdn_upload/499959933730684929/387064998285583/1776310802_9bd788c9.png',
+      'https://agent-cdn.minimax.io/mcp/cdn_upload/499959933730684929/387064998285583/1776310807_1c85503a.png',
+      'https://agent-cdn.minimax.io/mcp/cdn_upload/499959933730684929/387064998285583/1776310811_0b65ba23.png'
+    ];
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+      currentIndex = index;
+      showImage();
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function showImage() {
+      document.getElementById('lightbox-img').src = images[currentIndex];
+      document.getElementById('lightbox-counter').textContent = (currentIndex + 1) + ' / ' + images.length;
+    }
+
+    function prevImage(e) {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage();
+    }
+
+    function nextImage(e) {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevImage(e);
+      if (e.key === 'ArrowRight') nextImage(e);
+    });
+  </script>
 </body>
 </html>
